@@ -56,13 +56,13 @@ const EmployeeDirectory = () => {
                 <div className=" container d-flex mt-3">
                     <input className=" form-control border-info w-50 ms-3 me-2" type="text" placeholder="Enter search" value={search} onChange={(e) => setSearch(e.target.value)} />
 
-                    <select className="border-info w-25 me-3" value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <select className="form-select border-info w-25 me-3" value={gender} onChange={(e) => setGender(e.target.value)}>
                         <option className="optioncolor" value="All">All</option>
                         <option className="optioncolor" value="male">Male</option>
                         <option className="optioncolor" value="female">Female</option>
                     </select>
 
-                    <select className="border-info w-25 me-3" value={sort} onChange={(e) => setSort(e.target.value)}>
+                    <select className="form-select border-info w-25 me-3" value={sort} onChange={(e) => setSort(e.target.value)}>
                         <option className="optioncolor" value="default">Default</option>
                         <option className="optioncolor" value="Age asc">Age Low-High</option>
                         <option className="optioncolor" value="Age des">Age High-Low</option>
