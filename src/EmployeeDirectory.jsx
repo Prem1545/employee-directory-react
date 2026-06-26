@@ -39,7 +39,8 @@ const EmployeeDirectory = () => {
     }
 
     if (loading) {
-        return (<><h1>loading.......</h1></>);
+        return (<> <h1>spinner-border</h1>
+        <h1 className="text-info">loading.......</h1></>);
     }
     return (
         <>
