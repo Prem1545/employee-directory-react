@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import  "./EmployeeDirectory.css";
 
 const EmployeeDirectory = () => {
 
@@ -39,51 +40,37 @@ const EmployeeDirectory = () => {
     }
 
     if (loading) {
-        return (<> <h1>spinner-border</h1>
-        <h1 className="text-info">loading.......</h1></>);
+        return (<> <h1 className="spinner-border text-info mt-5 "></h1>
+            <h1 className="text-info">loading.......</h1></>);
     }
     return (
         <>
-            <div className="mt-2">
-                <h2 className="fw-bold">Employee Directory System</h2>
+            <div className="bg-light min-vh-100 p-3">
+                <h2 className="fw-bold text-success">Employee Directory System</h2>
 
-                <div className="d-flex mt-3">
-                    <input
-                        className="form-control border-info w-50 ms-3 me-2"
-                        type="text"
-                        placeholder="Enter search"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
+                <div className=" container d-flex mt-3">
+                    <input className=" form-control border-info w-50 ms-3 me-2" type="text" placeholder="Enter search" value={search} onChange={(e) => setSearch(e.target.value)} />
 
-                    <select
-                        className="border-info w-25 me-3"
-                        value={gender}
-                        onChange={(e) => setGender(e.target.value)}
-                    >
-                        <option value="All">All</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                    <select className="border-info w-25 me-3" value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option className="optioncolor" value="All">All</option>
+                        <option className="optioncolor" value="male">Male</option>
+                        <option className="optioncolor" value="female">Female</option>
                     </select>
 
-                    <select
-                        className="border-info w-25 me-3"
-                        value={sort}
-                        onChange={(e) => setSort(e.target.value)}
-                    >
-                        <option value="default">Default</option>
-                        <option value="Age asc">Age Low-High</option>
-                        <option value="Age des">Age High-Low</option>
-                        <option value="Name asc">A-Z</option>
-                        <option value="Name des">Z-A</option>
+                    <select className="border-info w-25 me-3" value={sort} onChange={(e) => setSort(e.target.value)}>
+                        <option className="optioncolor" value="default">Default</option>
+                        <option className="optioncolor" value="Age asc">Age Low-High</option>
+                        <option className="optioncolor" value="Age des">Age High-Low</option>
+                        <option className="optioncolor" value="Name asc">A-Z</option>
+                        <option className="optioncolor" value="Name des">Z-A</option>
                     </select>
                 </div>
 
                 {sorteddata.length > 0 ? (
-                    <table className="table table-bordered table-striped mt-4">
-                        <thead className="table-dark">
+                    <table className="container table table-bordered employee-table mt-4">
+                        <thead>
                             <tr>
-                                <th>#</th>
+                                <th>S.No</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Age</th>

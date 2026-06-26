@@ -1,7 +1,7 @@
 
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import EmployeeDirectory from './EmployeeDirectory';
+import EmployeeDirectory from './Components/EmployeeDirectory';
 
 function App() {
   return (

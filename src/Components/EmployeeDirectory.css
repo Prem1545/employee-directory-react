@@ -1,0 +1,21 @@
+.employee-table > thead > tr > th {
+    background-color: rgb(175, 252, 156);
+    color: rgb(72, 5, 5);
+}
+
+.employee-table > tbody > tr > td {
+    background-color: rgb(232, 249, 231);
+    color: rgb(8, 63, 46);
+}
+
+.employee-table th,
+.employee-table tr,
+.employee-table td {
+    border: 1px solid rgb(4, 76, 15);
+}
+
+select {
+    /* background-color: rgb(221, 252, 220); */
+    color: rgb(8, 63, 46);
+    border-radius: 5px;
+}
