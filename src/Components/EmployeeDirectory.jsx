@@ -53,53 +53,67 @@ const EmployeeDirectory = () => {
             <div className="bg-light min-vh-100 p-3">
                 <h2 className="fw-bold text-success">Employee Directory System</h2>
 
-                <div className=" container d-flex mt-3">
-                    <input className=" form-control border-info w-50 ms-3 me-2" type="text" placeholder="Enter search" value={search} onChange={(e) => setSearch(e.target.value)} />
-
-                    <select className="form-select border-info w-25 me-3" value={gender} onChange={(e) => setGender(e.target.value)}>
-                        <option className="optioncolor" value="All">All</option>
-                        <option className="optioncolor" value="male">Male</option>
-                        <option className="optioncolor" value="female">Female</option>
-                    </select>
-
-                    <select className="form-select border-info w-25 me-3" value={sort} onChange={(e) => setSort(e.target.value)}>
-                        <option className="optioncolor" value="default">Default</option>
-                        <option className="optioncolor" value="Age asc">Age Low-High</option>
-                        <option className="optioncolor" value="Age des">Age High-Low</option>
-                        <option className="optioncolor" value="Name asc">A-Z</option>
-                        <option className="optioncolor" value="Name des">Z-A</option>
-                    </select>
+                <div className="container mt-3 employee-directory-filters">
+                    <div className="row g-2 align-items-center">
+                        <div className="col-12 col-md-5">
+                            <input
+                                className="form-control border-info"
+                                type="text"
+                                placeholder="Search name or email"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                        </div>
+                        <div className="col-6 col-md-3">
+                            <select className="form-select border-info" value={gender} onChange={(e) => setGender(e.target.value)}>
+                                <option className="optioncolor" value="All">All</option>
+                                <option className="optioncolor" value="male">Male</option>
+                                <option className="optioncolor" value="female">Female</option>
+                            </select>
+                        </div>
+                        <div className="col-6 col-md-4">
+                            <select className="form-select border-info" value={sort} onChange={(e) => setSort(e.target.value)}>
+                                <option className="optioncolor" value="default">Default</option>
+                                <option className="optioncolor" value="Age asc">Age Low-High</option>
+                                <option className="optioncolor" value="Age des">Age High-Low</option>
+                                <option className="optioncolor" value="Name asc">A-Z</option>
+                                <option className="optioncolor" value="Name des">Z-A</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
                 {sorteddata.length > 0 ? (
-                    <table className="container table table-bordered employee-table mt-4">
-                        <thead>
-                            <tr>
-                                <th>S.No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Age</th>
-                                <th>Gender</th>
-                                <th>Company</th>
-                                <th>Department</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {sorteddata.map((emp, index) => (
-                                <tr key={emp.id}>
-                                    <td>{index + 1}</td>
-                                    <td>
-                                        {emp.firstName} {emp.maidenName} {emp.lastName}
-                                    </td>
-                                    <td>{emp.email}</td>
-                                    <td>{emp.age}</td>
-                                    <td>{emp.gender}</td>
-                                    <td>{emp.company.name}</td>
-                                    <td>{emp.company.department}</td>
+                    <div className="container table-responsive mt-4">
+                        <table className="table table-bordered employee-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Company</th>
+                                    <th>Department</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {sorteddata.map((emp, index) => (
+                                    <tr key={emp.id}>
+                                        <td>{index + 1}</td>
+                                        <td>
+                                            {emp.firstName} {emp.maidenName} {emp.lastName}
+                                        </td>
+                                        <td>{emp.email}</td>
+                                        <td>{emp.age}</td>
+                                        <td>{emp.gender}</td>
+                                        <td>{emp.company.name}</td>
+                                        <td>{emp.company.department}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 ) : (
                     <p className="mt-3">No Data Found</p>
                 )}

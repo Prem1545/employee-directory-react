@@ -14,8 +14,29 @@
     border: 1px solid rgb(4, 76, 15);
 }
 
+.employee-table th,
+.employee-table td {
+    white-space: nowrap;
+}
+
+.employee-directory-filters .form-control,
+.employee-directory-filters .form-select {
+    min-height: 48px;
+}
+
+.employee-directory-filters {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+@media (max-width: 575.98px) {
+    .employee-directory-filters {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 select {
-    /* background-color: rgb(221, 252, 220); */
     color: rgb(8, 63, 46);
     border-radius: 5px;
 }
